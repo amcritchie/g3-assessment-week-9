@@ -59,6 +59,14 @@ class ToDoApp < Sinatra::Application
     redirect "/"
   end
 
+  get "/todo/:id/edit" do
+    p true
+    id = params[:id].to_i
+    todos = ToDoItem.all
+    p todo_to_edit = todos.find_by_id(id)
+    erb :edit, locals: {message_to_edit: todo_to_edit}
+  end
+
   post "/todos" do
     ToDoItem.create(body: params[:body])
 

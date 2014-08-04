@@ -26,6 +26,9 @@
     <ul class="todos">
       <% todos.each do |todo| %>
           <li><%= todo.body %></li>
+          <form action="/todos/<%= todo.id%>/edit" method="post" name="_method">
+            <button>Edit</button>
+          </form>
       <% end %>
     </ul>
   </div>

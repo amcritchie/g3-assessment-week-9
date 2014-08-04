@@ -1,0 +1,10 @@
+<h1>Hi</h1>
+
+<h3>Edit Message</h3>
+
+<form action="/todos/<%= todo.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <label for="edit_message">Message</label>
+  <input type="text" value="<%= todo.body %>" name="edit_message" id="edit_message">
+  <button>Submit</button>
+</form>
